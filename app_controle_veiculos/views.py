@@ -8,3 +8,6 @@ def cadveiculos(request):
 
 def cadmotoristas(request):
     return render(request,'motoristas/cadmotoristas.html')
+
+def movimentacao(request):
+    return render(request,'movimentacao/movimentacao.html')
