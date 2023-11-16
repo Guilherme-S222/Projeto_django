@@ -3,6 +3,9 @@
     padding: 0;
     font-family: "Blinker";
 }
+body{
+    background-color: #717e8b;
+}
 
 /* BARRA DE NAVEGAÇÃO */
 .navbar {
@@ -10,12 +13,16 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background-color: #6666;
+    background-color: #343a40;
 }
 .navbar h2 a{
     opacity: 1;
     text-decoration: none;
     color: #fff;
+}
+.navbar h2 a:hover{
+    color: #20c997;
+    transition: .3s;
 }
 .navbar ul{
     display: flex;
@@ -36,4 +43,37 @@
 }
 .navbar ul li a:hover{
     opacity: 1;
+    color: #20c997;
 }
+.table-movimentacao{
+    display: flex;
+    max-width: 1000px;
+    width: 50%;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    font-size: 20px;
+    justify-content: center;    
+}
+table{
+    border-collapse: collapse;
+    border: 1px solid #343a40;
+    width: 70rem;
+   }
+   
+   tbody tr {
+    height: 40px;
+    border-bottom: 1px solid #343a40;
+    background-color: #343a40;
+    text-align: center;
+    color: #fff;
+    
+   }
+   
+   .title {
+    background-color: #20c997;
+    height: 30px;
+    color: #fff;
+    font-size: 26px;
+   }
+
+

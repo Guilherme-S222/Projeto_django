@@ -6,11 +6,13 @@
 h1{
     text-align: center;
     margin-bottom: 1rem;
+    color: #fff;
 }
 .label{
     margin-bottom: 0.5rem;
     font-size: 22px;
     font-weight: 600;
+    color: #fff;
 }
 .div-input{
     max-width: 500px;
@@ -43,7 +45,7 @@ h1{
 }
 .btn-salvar:hover{
     color:#fff;
-    background-color: skyblue;
+    background-color: #20c997;
 
 }
 .div-input select{
