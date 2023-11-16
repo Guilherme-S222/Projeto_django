@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Blinker";
+}
+
+/* BARRA DE NAVEGAÇÃO */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: skyblue;
+}
+.navbar h2 a{
+    opacity: 1;
+    text-decoration: none;
+    color: #fff;
+}
+.navbar ul{
+    display: flex;
+    gap: 1rem;
+    text-decoration: none;
+    color: #fff;
+    list-style: none;
+}
+.navbar ul li a{
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: .3s;
+    font-size: 20px;
+    border: 1px solid #fff;
+    padding: .5rem 1rem;
+    border-radius: 0.5rem;
+}
+.navbar ul li a:hover{
+    opacity: 1;
+}

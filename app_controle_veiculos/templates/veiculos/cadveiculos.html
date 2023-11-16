@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Veículos</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <h2>
+            <a href="/">Página Inicial</a>
+        </h2>
+        <ul>
+            <li>
+                <a href="/cadveiculos">Cadastro de Veículos</a>
+            </li>
+            <li>
+                <a href="/cadmotoristas">Cadastro de Motoristas</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Cadastro de Veículos</h1>
+        <div class="div-input">
+            <label class="label">Placa</label>
+            <input type="text" class="input" placeholder="Digite a placa do veículo">
+
+            <label class="label">Marca</label>
+            <input type="text" class="input" placeholder="Digite a marca do veículo">
+
+            <label class="label">Veículo</label>
+            <input type="text" class="input" placeholder="Digite o nome do veículo">
+
+            <label class="label">Km da Troca de Óleo</label>
+            <input type="text" class="input" placeholder="Digite a quilometragem para a troca de óleo">
+            <button class="btn-salvar">Salvar</button>
+        </div>
+    </div>
+</body>
+</html>
