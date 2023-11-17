@@ -74,6 +74,12 @@ WSGI_APPLICATION = 'projeto_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# pip install mysqlclient // para instalar o mysqlclient
+# fazer migrations: 
+# python manage.py makemigrations
+# python manage.py migrate
+
+# testar conexão: python manage.py runserver
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
