@@ -45,6 +45,8 @@ body{
     opacity: 1;
     color: #20c997;
 }
+
+/* TABELA DE CONSULTAS */
 .table-movimentacao{
     display: flex;
     max-width: 1000px;
