@@ -53,7 +53,6 @@ body{
     width: 100%;
     margin: 5rem auto;
     padding: 0 2rem;
-    font-size: 20px;
     justify-content: center;    
 }
 table{
@@ -72,12 +71,17 @@ tbody tr {
 }
    
 .title {
-    background-color: #000000;
+    background-color: #20c997;
     height: 20px;
     color: #fff;
 }
+
 table thead tr th{
-    font-size: 10px;
+    font-size: 20px;
+}
+
+table tbody tr td{
+    font-size: 20px;
 }
 
 
