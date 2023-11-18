@@ -53,29 +53,31 @@ body{
     width: 100%;
     margin: 5rem auto;
     padding: 0 2rem;
-    font-size: 5px;
+    font-size: 20px;
     justify-content: center;    
 }
 table{
     border-collapse: collapse;
     border: 1px solid #343a40;
     width: 150rem;
-   }
+}
    
-   tbody tr {
+tbody tr {
     height: 40px;
     border-bottom: 1px solid #343a40;
     background-color: #343a40;
     text-align: center;
     color: #fff;
     
-   }
+}
    
-   .title {
-    background-color: #20c997;
-    height: 30px;
+.title {
+    background-color: #000000;
+    height: 20px;
     color: #fff;
-    font-size: 5px;
-   }
+}
+table thead tr th{
+    font-size: 10px;
+}
 
 
