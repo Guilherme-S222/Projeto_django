@@ -83,5 +83,10 @@ table thead tr th{
 table tbody tr td{
     font-size: 20px;
 }
-
-
+.btn-action{
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    padding: 2px;
+    font-size: 15px;
+}
