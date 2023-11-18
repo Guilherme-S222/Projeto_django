@@ -2,7 +2,17 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import pymysql
 
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='123456',
+    database='projeto_django',
+)
+cursor = connection.cursor()
+cursor.close()
+connection.close()
 
 def main():
     """Run administrative tasks."""

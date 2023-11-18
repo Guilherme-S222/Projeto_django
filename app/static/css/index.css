@@ -49,17 +49,17 @@ body{
 /* TABELA DE CONSULTAS */
 .table-movimentacao{
     display: flex;
-    max-width: 1000px;
-    width: 50%;
+    max-width: 1200px;
+    width: 100%;
     margin: 5rem auto;
     padding: 0 2rem;
-    font-size: 20px;
+    font-size: 5px;
     justify-content: center;    
 }
 table{
     border-collapse: collapse;
     border: 1px solid #343a40;
-    width: 70rem;
+    width: 150rem;
    }
    
    tbody tr {
@@ -75,7 +75,7 @@ table{
     background-color: #20c997;
     height: 30px;
     color: #fff;
-    font-size: 26px;
+    font-size: 5px;
    }
 
 
