@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css"/>
 </head>
 <body>
 
@@ -36,10 +37,10 @@
     <!-- TABELA DE MOVIMENTAÇÃO -->
     <div class="table-movimentacao">
 
-        <table>
+        <table id="table">
             <thead>
                 <tr class="title">
-                    <th><input type="checkbox"></th>
+                    <!-- <th><input type="checkbox"></th> -->
                     <th>Id</th>
                     <th>Veículo</th>
                     <th>Motorista</th>
@@ -57,7 +58,7 @@
             <tbody>
                 {% for id_controle in controle_veiculos %}
                     <tr class="table-content">
-                        <td class="content"><input type="checkbox"></td>
+                        <!-- <td class="content"><input type="checkbox"></td> -->
                         <td>{{ id_controle.id_controle }}</td>
                         <td>{{ id_controle.placa_veiculo_FK }}</td>
                         <td>{{ id_controle.cod_motorista_FK }}</td>
@@ -75,6 +76,15 @@
         </table>
         
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#table').DataTable({
+                "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
+                "iDisplayLength": 3
+            });
+        })
+    </script>
 </body>
 </html>
