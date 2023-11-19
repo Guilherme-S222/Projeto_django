@@ -19,11 +19,6 @@ def home(request):
     controle_veiculos = ControleVeiculos.objects.all()
     return render(request,'principal/index.html',{'controle_veiculos': controle_veiculos})
 
-# EDIÇÃO DE CONTROLE
-def edit(resquest, id_controle):
-    id_controle = ControleVeiculos.objects.get(id_controle=id_controle)
-    return render(resquest, 'movimentacao/edit.html',{'id_controle': id_controle})
-
 
 # CADASTRO DE VEICULOS
 def cadveiculos(request):
@@ -72,3 +67,16 @@ def movimentacao(request):
     else:
         form = ControleForm()
     return render(request,'movimentacao/movimentacao.html',{'form':form})
+
+# EDIÇÃO DE CONTROLE
+def edit(request, id_controle):
+    id_controle = ControleVeiculos.objects.get(id_controle=id_controle)
+    return render(request, 'movimentacao/edit.html',{'id_controle': id_controle})
+
+def update(request, id_controle):
+    id_controle = ControleVeiculos.objects.get(id_controle=id_controle)
+    form = ControleForm(request.POST, instance= id_controle)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    return render(request, 'edit.html', {'id_controle': id_controle})

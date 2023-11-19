@@ -33,8 +33,8 @@
     <div class="table-movimentacao">
         <table>
             <thead>
-                <tr class="title" id="checkall">
-                    <th><input type="checkbox" class="checkall"></th>
+                <tr class="title">
+                    <th><input type="checkbox"></th>
                     <th>Id</th>
                     <th>Veículo</th>
                     <th>Motorista</th>
@@ -50,8 +50,8 @@
             </thead>
             <tbody>
                 {% for id_controle in controle_veiculos %}
-                    <tr>
-                        <td><input type="checkbox" class="checkthis"></td>
+                    <tr class="table-content">
+                        <td class="content"><input type="checkbox"></td>
                         <td>{{ id_controle.id_controle }}</td>
                         <td>{{ id_controle.placa_veiculo_FK }}</td>
                         <td>{{ id_controle.cod_motorista_FK }}</td>
@@ -60,7 +60,7 @@
                         <td>{{ id_controle.destino }}</td>
                         <td>{{ id_controle.data_retorno }}</td>
                         <td>{{ id_controle.hora_retorno }}</td>
-                        <td><a class="btn-action">Visualizar</a></td>
+                        <td><a href="/edit/{{ id_controle.id_controle }}" class="btn-action">Visualizar</a></td>
                         <td><a href="/edit/{{ id_controle.id_controle }}"  class="btn-action">Editar</a></td>
                         <td><a href="/delete/{{ id_controle.id_controle }}" class="btn-action">Excluir</a></td>
                     </tr>

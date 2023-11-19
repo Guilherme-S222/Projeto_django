@@ -49,39 +49,39 @@ body{
 /* TABELA DE CONSULTAS */
 .table-movimentacao{
     display: flex;
-    max-width: 1200px;
-    width: 100%;
+    flex-direction: column;
+    max-width: 1100px;
     margin: 5rem auto;
-    padding: 0 2rem;
-    justify-content: center;   
     border-collapse: collapse;
     border: 1px solid #343a40;
-    width: 150rem; 
+    border-radius: 3px;
 }
-
-.table-movimentacao thead th{
-    font-size: 20px;
-    background-color: #20c997;
-    height: 10px;
-    color: #fff;
-}
-   
-tbody tr {
-    height: 40px;
-    border-bottom: 1px solid #343a40;
-    background-color: #343a40;
+.table-movimentacao table{
+    font-size: 22px;
     text-align: center;
-    color: #fff;
     
 }
+.title{
+    background-color: #20c997;
+    color: #fff;
+    height: 2rem;
+    
+    
 
-table tbody tr td{
-    font-size: 20px;
+}
+.table-content{
+    color: #fff;
+    background-color: #343a40;
+    height: 2rem;
+    
+
 }
 .btn-action{
     cursor: pointer;
-    border: 1px solid #fff;
+    border: 1px solid #535d68;
     border-radius: 2px;
     padding: 2px;
-    font-size: 15px;
+    font-size: 18px; 
+    text-decoration: none; 
+    color: #fff;
 }

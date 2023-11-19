@@ -34,7 +34,7 @@
         <h1>Editar Movimentação</h1>
 
         <div>
-            <form method="POST" action="" class="div-input">
+            <form method="POST" action="/update/{{id_controle.id_controle}}" class="div-input">
                 {% csrf_token %}
 
                 <label class="label">Placa do Veículo</label>
@@ -50,24 +50,24 @@
                 <input type="time" class="input" name="hora_saida" id="id_controle_hora_saida" required value="{{ id_controle.hora_saida }}"/>
 
                 <label class="label">Km de Saída</label>
-                {{ form.km_saida }}
+                <input type="text" class="input" name="km_saida" id="id_controle_km_saida" required maxlength="11" value="{{ id_controle.km_saida }}"/>
 
                 <label class="label">Destino</label>
-                {{ form.destino }}
+                <input type="text" class="input" name="destino" id="id_controle_destino" required maxlength="50" value="{{ id_controle.destino }}"/>
 
                 <label class="label">Data de Retorno</label>
-                {{ form.data_retorno }}
+                <input type="date" class="input" name="data_retorno" id="id_controle_data_retorno" required value="{{ id_controle.data_retorno }}"/>
 
                 <label class="label">Hora de Retorno</label>
-                {{ form.hora_retorno }}
+                <input type="time" class="input" name="hora_retorno" id="id_controle_hora_retorno" required value="{{ id_controle.hora_retorno }}"/>
 
                 <label class="label">Km de Retorno</label>
-                {{ form.km_retorno }}
+                <input type="text" class="input" name="km_retorno" id="id_controle_km_retorno" required maxlength="11" value="{{ id_controle.km_retorno }}"/>
 
                 <label class="label">Km Percorrido</label>
-                {{ form.km_percorrido }}
+                <input type="text" class="input" name="km_percorrido" id="id_controle_km_percorrido" required maxlength="11" value="{{ id_controle.km_percorrido }}"/>
                             
-                <button type="submit" class="btn-salvar">Salvar</button>
+                <button type="submit" class="btn-salvar">Atualizar</button>
             </form>
         </div>
 
