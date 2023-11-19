@@ -68,10 +68,12 @@ def movimentacao(request):
         form = ControleForm()
     return render(request,'movimentacao/movimentacao.html',{'form':form})
 
+
 # EDIÇÃO DE CONTROLE
 def edit(request, id_controle):
     id_controle = ControleVeiculos.objects.get(id_controle=id_controle)
     return render(request, 'movimentacao/edit.html',{'id_controle': id_controle})
+
 
 # UPDATE DE CONTROLE
 def update(request, id_controle):
@@ -82,8 +84,18 @@ def update(request, id_controle):
         return redirect('/')
     return render(request, 'edit.html', {'id_controle': id_controle})
 
+
+# CONFIRMAÇÃO DE DELETE
+def confirm_delete(request, id_controle):
+    id_controle = get_object_or_404(ControleVeiculos, id_controle=id_controle)
+    return render(request, 'confirm_delete.html', {'id_controle': id_controle})
+
+
 # DELETE DE CONTROLE
 def destroy(request, id_controle):
-    id_controle = get_object_or_404(ControleVeiculos, id_controle=id_controle)
-    id_controle.delete()
-    return redirect('/')
+    if request.method == 'POST':     
+        id_controle = get_object_or_404(ControleVeiculos, id_controle=id_controle)
+        id_controle.delete()
+        messages.success(request, 'Movimentação excluída com sucesso!')
+        return redirect('/')
+    return redirect('confirm_delete', id_controle=id_controle)

@@ -17,13 +17,13 @@
         </h2>
         <ul>
             <li>
-                <a href="/cadveiculos">Veículos</a>
+                <a href="{% url 'cadveiculos' %}">Veículos</a>
             </li>
             <li>
-                <a href="/cadmotoristas">Motoristas</a>
+                <a href="{% url 'cadmotoristas' %}">Motoristas</a>
             </li>
             <li>
-                <a href="/movimentacao">Movimentação</a>
+                <a href="{% url 'movimentacao' %}">Movimentação</a>
             </li>
         </ul>
     </nav>
@@ -62,7 +62,7 @@
                         <td>{{ id_controle.hora_retorno }}</td>
                         <td><a href="/edit/{{ id_controle.id_controle }}" class="btn-action">Visualizar</a></td>
                         <td><a href="/edit/{{ id_controle.id_controle }}"  class="btn-action">Editar</a></td>
-                        <td><a href="/delete/{{ id_controle.id_controle }}" class="btn-action">Excluir</a></td>
+                        <td><a href="/confirm_delete/{{ id_controle.id_controle }}" class="btn-action">Excluir</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
