@@ -53,12 +53,17 @@ body{
     width: 100%;
     margin: 5rem auto;
     padding: 0 2rem;
-    justify-content: center;    
-}
-table{
+    justify-content: center;   
     border-collapse: collapse;
     border: 1px solid #343a40;
-    width: 150rem;
+    width: 150rem; 
+}
+
+.table-movimentacao thead th{
+    font-size: 20px;
+    background-color: #20c997;
+    height: 10px;
+    color: #fff;
 }
    
 tbody tr {
@@ -68,16 +73,6 @@ tbody tr {
     text-align: center;
     color: #fff;
     
-}
-   
-.title {
-    background-color: #20c997;
-    height: 20px;
-    color: #fff;
-}
-
-table thead tr th{
-    font-size: 20px;
 }
 
 table tbody tr td{

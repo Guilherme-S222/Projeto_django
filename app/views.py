@@ -13,9 +13,19 @@ from app.models import ControleVeiculos
 
 # Create your views here.
 
-def home(request):
-    return render(request,'principal/index.html')
 
+# PAGINA INICIAL
+def home(request):
+    controle_veiculos = ControleVeiculos.objects.all()
+    return render(request,'principal/index.html',{'controle_veiculos': controle_veiculos})
+
+# EDIÇÃO DE CONTROLE
+def edit(resquest, id_controle):
+    id_controle = ControleVeiculos.objects.get(id_controle=id_controle)
+    return render(resquest, 'movimentacao/edit.html',{'id_controle': id_controle})
+
+
+# CADASTRO DE VEICULOS
 def cadveiculos(request):
     if request.method == "POST":
         form = VeiculoForm(request.POST)
@@ -30,6 +40,8 @@ def cadveiculos(request):
         form = VeiculoForm()
     return render(request,'veiculos/cadveiculos.html',{'form':form})
 
+
+# CADASTRO DE MOTORISTAS
 def cadmotoristas(request):
     if request.method == "POST":
         form = MotoristaForm(request.POST)
@@ -44,6 +56,8 @@ def cadmotoristas(request):
         form = MotoristaForm()
     return render(request,'motoristas/cadmotoristas.html',{'form':form})
 
+
+# CADASTRO DE MOVIMENTAÇÃO
 def movimentacao(request):
     if request.method == "POST":
         form = ControleForm(request.POST)

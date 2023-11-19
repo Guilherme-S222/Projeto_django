@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edição de Movimentação</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h2>
+            <a href="/">Página Inicial</a>
+        </h2>
+        <ul>
+            <li>
+                <a href="/cadveiculos">Veículos</a>
+            </li>
+            <li>
+                <a href="/cadmotoristas">Motoristas</a>
+            </li>
+            <li>
+                <a href="/movimentacao">Movimentação</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Editar Movimentação</h1>
+
+        <div>
+            <form method="POST" action="" class="div-input">
+                {% csrf_token %}
+
+                <label class="label">Placa do Veículo</label>
+                <input type="text" class="input" name="placa_veiculo_FK" id="id_controle_placa_veiculo_FK" required maxlength="7" value="{{ id_controle.placa_veiculo_FK }}"/>
+
+                <label class="label">Código do Motorista</label>
+                <input type="text" class="input" name="cod_motorista_FK" id="id_controle_cod_motorista_FK" required maxlength="11" value="{{ id_controle.cod_motorista_FK }}"/>
+
+                <label class="label">Data de Saída</label>
+                <input type="date" class="input" name="data_saida" id="id_controle_data_saida" required value="{{ id_controle.data_saida }}"/>
+
+                <label class="label">Hora Saída</label>
+                <input type="time" class="input" name="hora_saida" id="id_controle_hora_saida" required value="{{ id_controle.hora_saida }}"/>
+
+                <label class="label">Km de Saída</label>
+                {{ form.km_saida }}
+
+                <label class="label">Destino</label>
+                {{ form.destino }}
+
+                <label class="label">Data de Retorno</label>
+                {{ form.data_retorno }}
+
+                <label class="label">Hora de Retorno</label>
+                {{ form.hora_retorno }}
+
+                <label class="label">Km de Retorno</label>
+                {{ form.km_retorno }}
+
+                <label class="label">Km Percorrido</label>
+                {{ form.km_percorrido }}
+                            
+                <button type="submit" class="btn-salvar">Salvar</button>
+            </form>
+        </div>
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="{% if message.tags %}alert alert-{{ message.tags }}{% else %}alert{% endif %}" style="font-size: 25px; color: #20c997; text-align: center;">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>

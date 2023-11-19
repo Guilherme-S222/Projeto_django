@@ -27,11 +27,15 @@
             </li>
         </ul>
     </nav>
+    {% block content %}{% endblock %}
 
+    <!-- TABELA DE MOVIMENTAÇÃO -->
     <div class="table-movimentacao">
         <table>
             <thead>
-                <tr class="title">
+                <tr class="title" id="checkall">
+                    <th><input type="checkbox" class="checkall"></th>
+                    <th>Id</th>
                     <th>Veículo</th>
                     <th>Motorista</th>
                     <th>Data Saída</th>
@@ -45,18 +49,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Veículo 1</td>
-                    <td>Motorista 1</td>
-                    <td>18/11/2023</td>
-                    <td>08:00</td>
-                    <td>Tupã</td>
-                    <td>18/11/2023</td>
-                    <td>16:00</td>
-                    <td><a class="btn-action">Visualizar</a></td>
-                    <td><a class="btn-action">Editar</a></td>
-                    <td><a class="btn-action">Excluir</a></td>
-                </tr>
+                {% for id_controle in controle_veiculos %}
+                    <tr>
+                        <td><input type="checkbox" class="checkthis"></td>
+                        <td>{{ id_controle.id_controle }}</td>
+                        <td>{{ id_controle.placa_veiculo_FK }}</td>
+                        <td>{{ id_controle.cod_motorista_FK }}</td>
+                        <td>{{ id_controle.data_saida }}</td>
+                        <td>{{ id_controle.hora_saida }}</td>
+                        <td>{{ id_controle.destino }}</td>
+                        <td>{{ id_controle.data_retorno }}</td>
+                        <td>{{ id_controle.hora_retorno }}</td>
+                        <td><a class="btn-action">Visualizar</a></td>
+                        <td><a href="/edit/{{ id_controle.id_controle }}"  class="btn-action">Editar</a></td>
+                        <td><a href="/delete/{{ id_controle.id_controle }}" class="btn-action">Excluir</a></td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
