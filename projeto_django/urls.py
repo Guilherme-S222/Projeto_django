@@ -7,6 +7,5 @@ urlpatterns = [
     path('',views.home,name='index'),
     path('cadveiculos/',views.cadveiculos,name='cadveiculos'),
     path('cadmotoristas/',views.cadmotoristas,name='cadmotoristas'),
-    path('movimentacao/',views.movimentacao,name='movimentacao')
-    
+    path('movimentacao/',views.movimentacao,name='movimentacao'),
 ]

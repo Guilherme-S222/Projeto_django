@@ -1,6 +1,7 @@
 from django import forms
 from app.models import Veiculo
 from app.models import Motorista
+from app.models import ControleVeiculos
 
 class VeiculoForm(forms.ModelForm):
     class Meta:
@@ -22,4 +23,25 @@ class MotoristaForm(forms.ModelForm):
             'nome_motorista': forms.TextInput(attrs={ 'class': 'input' }),
             'telefone_motorista': forms.TextInput(attrs={ 'class': 'input' }),
             'cnh_motorista': forms.TextInput(attrs={ 'class': 'input' }),
+        }
+        
+class ControleForm(forms.ModelForm):
+    
+    #placa_veiculo_FK = forms.ModelChoiceField(queryset=Veiculo.objects.all(), empty_label='Selecione uma opção')
+    #cod_motorista_FK = forms.ModelChoiceField(queryset=Motorista.objects.all(), empty_label='Selecione uma opção')
+    
+    class Meta:
+        model = ControleVeiculos
+        fields = ['placa_veiculo_FK', 'cod_motorista_FK', 'data_saida', 'hora_saida', 'km_saida', 'destino', 'data_retorno', 'hora_retorno', 'km_retorno', 'km_percorrido']
+        widgets = {
+            'placa_veiculo_FK': forms.TextInput(attrs={ 'class': 'input' }),
+            'cod_motorista_FK': forms.NumberInput(attrs={ 'class': 'input' }),
+            'data_saida': forms.DateInput(attrs={ 'class': 'input', 'type': 'date' }),
+            'hora_saida': forms.TimeInput(attrs={ 'class': 'input', 'type': 'time' }),
+            'km_saida': forms.NumberInput(attrs={ 'class': 'input' }),
+            'destino': forms.TextInput(attrs={ 'class': 'input' }),
+            'data_retorno': forms.DateInput(attrs={ 'class': 'input', 'type': 'date' }),
+            'hora_retorno': forms.TimeInput(attrs={ 'class': 'input', 'type': 'time' }),
+            'km_retorno': forms.NumberInput(attrs={ 'class': 'input' }),
+            'km_percorrido': forms.NumberInput(attrs={ 'class': 'input' }),
         }

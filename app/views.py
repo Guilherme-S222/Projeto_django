@@ -7,6 +7,9 @@ from app.models import Veiculo
 from app.forms import MotoristaForm
 from app.models import Motorista
 
+from app.forms import ControleForm
+from app.models import ControleVeiculos
+
 
 # Create your views here.
 
@@ -42,4 +45,16 @@ def cadmotoristas(request):
     return render(request,'motoristas/cadmotoristas.html',{'form':form})
 
 def movimentacao(request):
-    return render(request,'movimentacao/movimentacao.html')
+    if request.method == "POST":
+        form = ControleForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                print()
+                messages.success(request, 'Movimentação cadastrada com sucesso!')
+                return redirect('movimentacao')
+            except Exception as e:
+                messages.error(request, f'Erro ao cadastrar: {e}')
+    else:
+        form = ControleForm()
+    return render(request,'movimentacao/movimentacao.html',{'form':form})

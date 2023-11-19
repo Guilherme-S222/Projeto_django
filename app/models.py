@@ -22,7 +22,7 @@ class Motorista(models.Model):
 
 # TABELA CONTROLE_VEICULOS                
 class ControleVeiculos(models.Model):  
-    id_controle = models.IntegerField(primary_key=True)  
+    id_controle = models.AutoField(primary_key=True)  
     placa_veiculo_FK = models.CharField(max_length=7)
     cod_motorista_FK = models.IntegerField()
     data_saida = models.DateField()

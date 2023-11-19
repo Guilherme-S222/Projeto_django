@@ -30,52 +30,55 @@
     </nav>
     <div class="container">
         <h1>Cadastrar Movimentação</h1>
-        <div class="div-input">
 
-            <label class="label">Veículo</label>
-            <select name="veiculos" id="veiculos">
-                <option value="default">Selecione um veículo</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
+        <div>
+            <form method="POST" action="/movimentacao/" class="div-input">
+                {% csrf_token %}
 
-            <label class="label">Motorista</label>
-            <select name="motorista" id="motorista">
-                <option value="default">Selecione um motorista</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
+                <label class="label">Placa do Veículo</label>
+                {{ form.placa_veiculo_FK }}
 
-            <label class="label">Data de Saída</label>
-            <input type="date" class="input" >
+                <label class="label">Código do Motorista</label>
+                {{ form.cod_motorista_FK }}
 
-            <label class="label">Hora Saída</label>
-            <input type="time" class="input">
+                <label class="label">Data de Saída</label>
+                {{ form.data_saida }}
 
-            <label class="label">Km de Saída</label>
-            <input type="text" class="input" placeholder="Digite o KM de saída">
+                <label class="label">Hora Saída</label>
+                {{ form.hora_saida }}
 
-            <label class="label">Destino</label>
-            <input type="text" class="input" placeholder="Digite o destino da viagem">
+                <label class="label">Km de Saída</label>
+                {{ form.km_saida }}
 
-            <label class="label">Data de Retorno</label>
-            <input type="date" class="input" >
+                <label class="label">Destino</label>
+                {{ form.destino }}
 
-            <label class="label">Hora de Retorno</label>
-            <input type="time" class="input" >
+                <label class="label">Data de Retorno</label>
+                {{ form.data_retorno }}
 
-            <label class="label">Km de Retorno</label>
-            <input type="text" class="input" placeholder="Digite o KM de retorno">
+                <label class="label">Hora de Retorno</label>
+                {{ form.hora_retorno }}
 
-            <label class="label">Km Percorrido</label>
-            <input type="text" class="input" placeholder="Digite o KM percorrido">
-                        
-            <button class="btn-salvar">Salvar</button>
+                <label class="label">Km de Retorno</label>
+                {{ form.km_retorno }}
+
+                <label class="label">Km Percorrido</label>
+                {{ form.km_percorrido }}
+                            
+                <button type="submit" class="btn-salvar">Salvar</button>
+            </form>
         </div>
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="{% if message.tags %}alert alert-{{ message.tags }}{% else %}alert{% endif %}" style="font-size: 25px; color: #20c997; text-align: center;">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
     </div>
 </body>
 </html>
