@@ -3,6 +3,7 @@
     padding: 0;
     font-family: "Blinker";
 }
+
 body{
     background-color: #535d68;
 }
@@ -15,15 +16,18 @@ body{
     padding: 1rem 2rem;
     background-color: #343a40;
 }
+
 .navbar h2 a{
     opacity: 1;
     text-decoration: none;
     color: #fff;
 }
+
 .navbar h2 a:hover{
     color: #20c997;
     transition: .3s;
 }
+
 .navbar ul{
     display: flex;
     gap: 1rem;
@@ -31,6 +35,7 @@ body{
     color: #fff;
     list-style: none;
 }
+
 .navbar ul li a{
     color: #fff;
     text-decoration: none;
@@ -41,6 +46,7 @@ body{
     padding: .5rem 1rem;
     border-radius: 0.5rem;
 }
+
 .navbar ul li a:hover{
     opacity: 1;
     color: #20c997;
@@ -56,26 +62,24 @@ body{
     border: 1px solid #343a40;
     border-radius: 3px;
 }
+
 .table-movimentacao table{
     font-size: 22px;
-    text-align: center;
-    
+    text-align: center; 
 }
+
 .title{
     background-color: #20c997;
     color: #fff;
     height: 2rem;
-    
-    
-
 }
+
 .table-content{
     color: #fff;
     background-color: #343a40;
     height: 2rem;
-    
-
 }
+
 .btn-action{
     cursor: pointer;
     border: 1px solid #535d68;

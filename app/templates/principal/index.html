@@ -11,10 +11,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
 <body>
+
     <nav class="navbar">
+
         <h2>
             <a href="/">Página Inicial</a>
         </h2>
+
         <ul>
             <li>
                 <a href="{% url 'cadveiculos' %}">Veículos</a>
@@ -26,11 +29,13 @@
                 <a href="{% url 'movimentacao' %}">Movimentação</a>
             </li>
         </ul>
+
     </nav>
     {% block content %}{% endblock %}
 
     <!-- TABELA DE MOVIMENTAÇÃO -->
     <div class="table-movimentacao">
+
         <table>
             <thead>
                 <tr class="title">
@@ -48,6 +53,7 @@
                     <th style="background-color: #ff3503;">Excluir</th>
                 </tr>
             </thead>
+
             <tbody>
                 {% for id_controle in controle_veiculos %}
                     <tr class="table-content">
@@ -67,6 +73,7 @@
                 {% endfor %}
             </tbody>
         </table>
+        
     </div>
 
 </body>

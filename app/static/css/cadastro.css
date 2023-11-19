@@ -59,7 +59,6 @@ p{
 .btn-salvar:hover{
     color:#fff;
     background-color: #20c997;
-
 }
 
 .div-input select{
@@ -82,14 +81,11 @@ p{
     padding: 0 15px 0 15px;
     height:3rem;
     border-radius: 0.5rem;
-    
-
 }
 
 #btn-excluir:hover{
     color:#fff;
     background-color: #ff3503;
-
 }
 
 #btn-canc{
@@ -104,5 +100,4 @@ p{
 #btn-canc:hover{
     color:#fff;
     background-color: #20c997;
-
 }

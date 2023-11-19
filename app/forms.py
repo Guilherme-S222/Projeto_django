@@ -3,6 +3,8 @@ from app.models import Veiculo
 from app.models import Motorista
 from app.models import ControleVeiculos
 
+
+# VEICULOS
 class VeiculoForm(forms.ModelForm):
     class Meta:
         model = Veiculo
@@ -14,6 +16,8 @@ class VeiculoForm(forms.ModelForm):
             'km_troca_oleo_veiculos': forms.NumberInput(attrs={ 'class': 'input' }),
         }
 
+
+# MOTORISTAS
 class MotoristaForm(forms.ModelForm):
     class Meta:
         model = Motorista
@@ -24,7 +28,9 @@ class MotoristaForm(forms.ModelForm):
             'telefone_motorista': forms.TextInput(attrs={ 'class': 'input' }),
             'cnh_motorista': forms.TextInput(attrs={ 'class': 'input' }),
         }
-        
+
+    
+# CONTROLE DE VEICULOS E MOTORISTAS        
 class ControleForm(forms.ModelForm):
     
     #placa_veiculo_FK = forms.ModelChoiceField(queryset=Veiculo.objects.all(), empty_label='Selecione uma opção')

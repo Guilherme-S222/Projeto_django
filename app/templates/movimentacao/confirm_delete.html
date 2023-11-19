@@ -10,19 +10,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
-
-
 </head>
 <body>
+
     <div class="container">
+
         <h1>Confirmação de Exclusão</h1>
+
         <p>Tem certeza que deseja excluir o registro {{ id_controle }}</p>
+
         <form method="POST" action="{% url 'destroy' id_controle.id_controle %}" class="form-delete">
             {% csrf_token %}
-            <button type="submit" id="btn-excluir">Confirmar Exclusão</button>
+            <button type="submit" id="btn-excluir">Confirmar</button>
         </form>
+
         <div class="form-delete">
-            <a href="{% url 'index' %}"><button id="btn-canc">Cancelar Exclusão</button></a>
+            <a href="{% url 'index' %}"><button id="btn-canc">Cancelar</button></a>
         </div>
 
     </div>
