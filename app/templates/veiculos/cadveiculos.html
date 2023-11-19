@@ -30,20 +30,37 @@
     </nav>
     <div class="container">
         <h1>Cadastro de Veículos</h1>
-        <div class="div-input">
-            <label class="label">Placa</label>
-            <input type="text" class="input" placeholder="Digite a placa do veículo">
 
-            <label class="label">Marca</label>
-            <input type="text" class="input" placeholder="Digite a marca do veículo">
+        <div>
+            <form method="POST" action="/cadveiculos/" class="div-input">
+                {% csrf_token %}
 
-            <label class="label">Veículo</label>
-            <input type="text" class="input" placeholder="Digite o nome do veículo">
+                <label class="label">Placa</label>
+                {{ form.placa_veiculo }}
+                
+                <label class="label">Marca</label>
+                {{ form.marca_veiculo }}
 
-            <label class="label">Km da Troca de Óleo</label>
-            <input type="text" class="input" placeholder="Digite a quilometragem para a troca de óleo">
-            <button class="btn-salvar">Salvar</button>
+                <label class="label">Veículo</label>
+                {{ form.nome_veiculo }}
+
+                <label class="label">Km da Troca de Óleo</label>
+                {{ form.km_troca_oleo_veiculos }}
+
+                <button type="submit" class="btn-salvar">Salvar</button>
+            </form>
         </div>
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="{% if message.tags %}alert alert-{{ message.tags }}{% else %}alert{% endif %}" style="font-size: 25px; color: #20c997; text-align: center;">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
     </div>
 </body>
 </html>
