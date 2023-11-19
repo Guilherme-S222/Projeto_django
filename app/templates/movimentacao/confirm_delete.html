@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirm-Delete</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+
 </head>
 <body>
-    <h2>Confirmação de Exclusão</h2>
-    <p>Tem certeza que deseja excluir o registro {{ id_controle }}</p>
-    <form method="POST" action="{% url 'delete' id_controle.id_controle %}">
-        {{% csrf_token %}}
-        <button type="submit">Confirmar Exclusão</button>
-        <a href="{% url 'index' %}">Cancelar</a>
-    </form>
+    <div class="container">
+        <h1>Confirmação de Exclusão</h1>
+        <p>Tem certeza que deseja excluir o registro {{ id_controle }}</p>
+        <form method="POST" action="{% url 'destroy' id_controle.id_controle %}" class="form-delete">
+            {% csrf_token %}
+            <button type="submit" id="btn-excluir">Confirmar Exclusão</button>
+        </form>
+        <div class="form-delete">
+            <a href="{% url 'index' %}"><button id="btn-canc">Cancelar Exclusão</button></a>
+        </div>
+
+    </div>
 </body>
 </html>

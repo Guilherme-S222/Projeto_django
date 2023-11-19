@@ -88,7 +88,7 @@ def update(request, id_controle):
 # CONFIRMAÇÃO DE DELETE
 def confirm_delete(request, id_controle):
     id_controle = get_object_or_404(ControleVeiculos, id_controle=id_controle)
-    return render(request, 'confirm_delete.html', {'id_controle': id_controle})
+    return render(request, 'movimentacao/confirm_delete.html', {'id_controle': id_controle})
 
 
 # DELETE DE CONTROLE
@@ -97,5 +97,6 @@ def destroy(request, id_controle):
         id_controle = get_object_or_404(ControleVeiculos, id_controle=id_controle)
         id_controle.delete()
         messages.success(request, 'Movimentação excluída com sucesso!')
-        return redirect('/')
-    return redirect('confirm_delete', id_controle=id_controle)
+        return redirect('index')
+    else:
+        return redirect('confirm_delete', id_controle=id_controle)
