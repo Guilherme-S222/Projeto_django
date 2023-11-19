@@ -1,7 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+
 from app.forms import VeiculoForm
 from app.models import Veiculo
+
+from app.forms import MotoristaForm
+from app.models import Motorista
+
 
 # Create your views here.
 
@@ -17,13 +22,24 @@ def cadveiculos(request):
                 messages.success(request, 'Veículo cadastrado com sucesso!')
                 return redirect('cadveiculos')
             except Exception as e:
-                messages.error(request, f'Erro ao cadastrar veículo: {e}')
+                messages.error(request, f'Erro ao cadastrar: {e}')
     else:
         form = VeiculoForm()
     return render(request,'veiculos/cadveiculos.html',{'form':form})
 
 def cadmotoristas(request):
-    return render(request,'motoristas/cadmotoristas.html')
+    if request.method == "POST":
+        form = MotoristaForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                messages.success(request, 'Motorista cadastrado com sucesso!')
+                return redirect('cadmotoristas')
+            except Exception as e:
+                messages.error(request, f'Erro ao cadastrar: {e}')
+    else:
+        form = MotoristaForm()
+    return render(request,'motoristas/cadmotoristas.html',{'form':form})
 
 def movimentacao(request):
     return render(request,'movimentacao/movimentacao.html')
