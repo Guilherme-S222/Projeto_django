@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 
 from app.forms import VeiculoForm
@@ -73,6 +73,7 @@ def edit(request, id_controle):
     id_controle = ControleVeiculos.objects.get(id_controle=id_controle)
     return render(request, 'movimentacao/edit.html',{'id_controle': id_controle})
 
+# UPDATE DE CONTROLE
 def update(request, id_controle):
     id_controle = ControleVeiculos.objects.get(id_controle=id_controle)
     form = ControleForm(request.POST, instance= id_controle)
@@ -80,3 +81,9 @@ def update(request, id_controle):
         form.save()
         return redirect('/')
     return render(request, 'edit.html', {'id_controle': id_controle})
+
+# DELETE DE CONTROLE
+def destroy(request, id_controle):
+    id_controle = get_object_or_404(ControleVeiculos, id_controle=id_controle)
+    id_controle.delete()
+    return redirect('/')
