@@ -1,5 +1,7 @@
 from django.db import models
 
+# O models.py é responsável por definir a estrutura do banco de dados, especificando os modelos de dados que serão usados para armazenar e recuperar informações
+
 # TABELA VEICULOS
 class Veiculo(models.Model):  
     placa_veiculo = models.CharField(max_length=7, primary_key=True)  

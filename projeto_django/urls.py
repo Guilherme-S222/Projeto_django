@@ -1,5 +1,8 @@
 from django.urls import path
 
+### Explicação do código ###
+# O arquivo urls.py é responsável por definir as rotas(urls) do seu projeto e mapear essas urls para as funções ou classes de views correspondentes. Cada URLS é associada a uma view especifica.
+
 from app import views
 
 urlpatterns = [

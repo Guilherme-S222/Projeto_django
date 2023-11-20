@@ -1,4 +1,7 @@
 from django import forms
+
+# O forms.py é usado para definir classes de formulários. Essas classes representam formulários HTML e fornecem uma maneira de validar e processar dados enviados pelo usuário por meio de uma solicitação HTTP. Sua função é organizar a lógica de validação do formulário e facilitar a interação com dados do usuário.
+
 from app.models import Veiculo
 from app.models import Motorista
 from app.models import ControleVeiculos

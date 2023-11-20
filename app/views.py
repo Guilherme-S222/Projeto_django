@@ -12,6 +12,7 @@ from app.models import ControleVeiculos
 
 
 # Create your views here.
+# Cada view se refere a uma função ou classe responsável por processar uma solicitação HTTP e retornar uma resposta. São componentes fundamentais de uma aplicação Django e desempenham um papel crucial na lógica de negócios, manipulação de dados e interação com o usuário. Aqui as views estão implementadas como funções(def) que recebem uma solicitação como argumento e retornam uma resposta.
 
 
 # PAGINA INICIAL
