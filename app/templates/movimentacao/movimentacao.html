@@ -75,12 +75,12 @@
         {% if messages %}
         <div class="messages">
             {% for message in messages %}
-                <div class="{% if message.tags %}alert alert-{{ message.tags }}{% else %}alert{% endif %}" style="font-size: 25px; color: #20c997; text-align: center;">
+                <div class="{% if message.tags %}alert alert-{{ message.tags }}{% else %}alert{% endif %}" style="font-size: 25px; color: #fff; text-align: center;">
                     {{ message }}
                 </div>
             {% endfor %}
         </div>
-        {% endif %}
+        {% endif %} 
 
     </div>
 </body>

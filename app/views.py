@@ -58,8 +58,18 @@ def movimentacao(request):
         form = ControleForm(request.POST)
         if form.is_valid():
             try:
-                form.save()
-                print()
+                instance = form.save(commit=False)
+                placa_veiculo_FK = form.cleaned_data['placa_veiculo_FK']
+                km_retorno = form.cleaned_data['km_retorno']
+
+                veiculo = Veiculo.objects.get(placa_veiculo=placa_veiculo_FK)
+                km_troca_oleo_veiculo = veiculo.km_troca_oleo_veiculos
+
+                if km_retorno > km_troca_oleo_veiculo:
+                    messages.warning(request, 'Aviso: É recomendado trocar o óleo do veículo.')
+
+                instance.save()
+
                 messages.success(request, 'Movimentação cadastrada com sucesso!')
                 return redirect('movimentacao')
             except Exception as e:
@@ -67,6 +77,7 @@ def movimentacao(request):
     else:
         form = ControleForm()
     return render(request,'movimentacao/movimentacao.html',{'form':form})
+
 
 
 # EDIÇÃO DE CONTROLE
