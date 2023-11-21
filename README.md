@@ -1,2 +1,2 @@
 # projeto_django
- Projeto Django
+ Projeto Django 1.0
