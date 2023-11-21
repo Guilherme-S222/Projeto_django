@@ -82,6 +82,8 @@ p{
     padding: 0 10px 0 10px;
     height: 3rem;
     border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 #btn-excluir:hover{
@@ -96,6 +98,8 @@ p{
     padding: 0 10px 0 10px;
     height: 3rem;
     border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 #btn-canc:hover{

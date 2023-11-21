@@ -10,14 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
 
     <div class="container">
 
-        <h1>Confirmação de Exclusão</h1>
+        <h1 class="animate__animated animate__bounce">Confirmação de Exclusão</h1>
 
-        <p>Tem certeza que deseja excluir o registro {{ id_controle }}</p>
+        <p class="animate__animated animate__bounce">Tem certeza que deseja excluir o registro {{ id_controle }}</p>
 
         <form method="POST" action="{% url 'destroy' id_controle.id_controle %}" class="form-delete">
             {% csrf_token %}
